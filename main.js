@@ -24,3 +24,15 @@ const timer = setInterval(() => {
     span.innerHTML = text[2];
   }
 }, 350);
+
+const header = $(".header");
+let currentScroll = window.scrollY;
+
+window.addEventListener("scroll", () => {
+  if (currentScroll > window.scrollY) {
+    header.style.top = "0px";
+  } else {
+    header.style.top = "-100px";
+  }
+  currentScroll = window.scrollY;
+});
