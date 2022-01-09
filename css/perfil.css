@@ -63,7 +63,9 @@
   border-right: 4px solid #111;
   margin-left: 3px;
 }
-
+.info-span-dark {
+  border-right: 4px solid var(--theme-color);
+}
 @keyframes blink {
   50% {
     border-color: transparent;
