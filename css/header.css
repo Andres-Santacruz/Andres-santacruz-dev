@@ -99,6 +99,7 @@ a.seleted::after,
   position: relative;
   outline: none;
   display: block;
+  cursor: pointer;
 }
 .btn-dark::after {
   content: "";
@@ -122,6 +123,16 @@ a.seleted::after,
   background-color: var(--secundary-color);
   width: 23px;
   transition: left 3s ease-in-out;
+}
+
+.icon-btn-dark {
+  object-fit: contain;
+  display: inline;
+  width: 19px;
+  padding-top: 2px;
+}
+.icon-btn-dark:hover {
+  filter: brightness(1.1);
 }
 
 #check-menu:checked ~ .menu {
