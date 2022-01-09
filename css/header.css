@@ -1,10 +1,11 @@
 .header {
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(20px);
   margin: 0 auto;
   padding: 0 20px;
   box-shadow: 0 4px 10px var(--shadow-color);
   position: sticky;
   top: 0;
+  z-index: var(--z-index-1);
 }
 
 .nav-header {
@@ -12,7 +13,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px;
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 .nav-header-a {
@@ -62,7 +63,7 @@
   left: 0;
   height: 4px;
   width: 100%;
-  background-color: var(--primary-color);
+  background-color: var(--color-utils);
   opacity: 0;
 
   transition: opacity 0.3s linear;
