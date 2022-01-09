@@ -32,7 +32,7 @@
   display: none;
 }
 .menu {
-  background: url("./img/ham-icon.svg");
+  background: url("../img/ham-icon.svg");
   width: 45px;
   height: 45px;
   display: none;
@@ -76,7 +76,7 @@ a.seleted::after,
 #check-menu:checked ~ .menu {
   width: 38px;
   height: 30px;
-  background-image: url("./img/x-icon.svg");
+  background: url("../img/x-icon.svg");
   animation: fadeIn 1s;
 }
 #check-menu:checked ~ .nav-header-menu-list {
