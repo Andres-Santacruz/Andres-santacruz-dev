@@ -1,12 +1,22 @@
 const $ = (el) => document.querySelector(el);
 const $$ = (el) => document.querySelectorAll(el);
+
 const ul = $(".nav-header-menu-list");
+const body = document.body;
+const h1_header = $(".nav-header-h1");
+const li = $$(".nav-header-menu-item");
+const info_h1 = $(".perfil-info-h1");
+const info_h2 = $(".perfil-info-h2");
+const span_blink = $(".perfil-info-span");
+const btn_dark = $(".btn-dark");
+const span = $(".perfil-info-span");
+const header = $(".header");
+
 ul.addEventListener("click", (e) => {
   const checkbox = $("#check-menu");
   checkbox.checked = false;
 });
 
-const span = $(".perfil-info-span");
 const text = ["Front-end ", "Back-end ", "Full-Stack "];
 let i = 0,
   num = 0;
@@ -26,9 +36,7 @@ const timer = setInterval(() => {
   }
 }, 350);
 
-const header = $(".header");
 let currentScroll = window.scrollY;
-
 window.addEventListener("scroll", () => {
   if (currentScroll > window.scrollY) {
     header.style.top = "0px";
@@ -38,15 +46,8 @@ window.addEventListener("scroll", () => {
   currentScroll = window.scrollY;
 });
 
-const btn_dark = $(".btn-dark");
-
-btn_dark.addEventListener("click", () => {
-  const body = document.body;
-  const h1_header = $(".nav-header-h1");
-  const li = $$(".nav-header-menu-item");
-  const info_h1 = $(".perfil-info-h1");
-  const info_h2 = $(".perfil-info-h2");
-
+const toggleDark = () => {
+  span_blink.classList.toggle("info-span-dark");
   btn_dark.classList.toggle("btn-dark-active");
   info_h1.classList.toggle("dark-info-h1");
   info_h2.classList.toggle("dark-info-h2");
@@ -54,4 +55,9 @@ btn_dark.addEventListener("click", () => {
   li.forEach((el) => el.classList.toggle("dark-color"));
   header.classList.toggle("dark-header");
   body.classList.toggle("dark");
-});
+};
+const mediaQueryDark = window.matchMedia("(prefers-color-scheme: dark)");
+if (mediaQueryDark.matches) {
+  toggleDark();
+}
+btn_dark.addEventListener("click", toggleDark);
