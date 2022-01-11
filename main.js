@@ -12,11 +12,6 @@ const btn_dark = $(".btn-dark");
 const $span = $(".perfil-info-span");
 const $header = $(".header");
 
-$ul.addEventListener("click", (e) => {
-  const checkbox = $("#check-menu");
-  checkbox.checked = false;
-});
-
 const text = ["Front-end ", "Back-end ", "Full-Stack "];
 let i = 0,
   num = 0;
@@ -61,3 +56,32 @@ if (mediaQueryDark.matches) {
   toggleDark();
 }
 btn_dark.addEventListener("click", toggleDark);
+
+const $alinks = $$(".nav-header-menu-item a");
+const $section = $$("section ");
+
+const observer = new IntersectionObserver(
+  (els) => {
+    els.forEach((el) => {
+      const atribute = el.target.getAttribute("id");
+      const alink = $(`a[href="#${atribute}"]`);
+      if (el.isIntersecting) {
+        $(".nav-header-menu-item a.seleted").classList.remove("seleted");
+        alink.classList.add("seleted");
+      }
+    });
+  },
+  { rootMargin: "-50% 0px -50% 0px" }
+);
+
+$alinks.forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const checkbox = $("#check-menu");
+    checkbox.checked = false;
+  });
+
+  const atribute = a.getAttribute("href");
+  const section = $(atribute);
+
+  if (section) observer.observe(section);
+});
