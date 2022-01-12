@@ -11,6 +11,7 @@ const span_blink = $(".perfil-info-span");
 const btn_dark = $(".btn-dark");
 const $span = $(".perfil-info-span");
 const $header = $(".header");
+const skill_cards = $$(".habilidades-content-item");
 
 const text = ["Front-end ", "Back-end ", "Full-Stack "];
 let i = 0,
@@ -50,6 +51,9 @@ const toggleDark = () => {
   $li.forEach((el) => el.classList.toggle("dark-color"));
   $header.classList.toggle("dark-header");
   $body.classList.toggle("dark");
+  skill_cards.forEach((el) =>
+    el.classList.toggle("habilidades-content-item-dark")
+  );
 };
 const mediaQueryDark = window.matchMedia("(prefers-color-scheme: dark)");
 if (mediaQueryDark.matches) {
