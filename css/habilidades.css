@@ -1,7 +1,11 @@
 .habilidades {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding-top: 50px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .habilidades-content {
   display: flex;
@@ -9,7 +13,7 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  padding: 20px;
+  padding: 20px 40px 10px 40px;
 }
 .habilidades-content-item {
   border-radius: 10px;
@@ -19,6 +23,9 @@
   padding: 10px;
   height: 110px;
   margin-top: 10px;
+}
+.habilidades-content-item-dark {
+  background-color: #c5c6ca;
 }
 .habilidades-logo {
   width: 100%;

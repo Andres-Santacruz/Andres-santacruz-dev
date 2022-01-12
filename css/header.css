@@ -1,5 +1,5 @@
 .header {
-  backdrop-filter: blur(20px);
+  background-color: var(--theme-color);
   margin: 0 auto;
   padding: 0 20px;
   box-shadow: 0 4px 10px var(--shadow-color);
@@ -11,6 +11,7 @@
 }
 .dark-header {
   box-shadow: 0 1px 1px var(--shadow-color);
+  background-color: var(--dark-mode-color);
 }
 
 .nav-header {
